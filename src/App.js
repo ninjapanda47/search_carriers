@@ -104,10 +104,7 @@ class App extends Component {
               value={this.state.query}
               onChange={this.handleChange}
             />
-            <button
-              className="btn btn-secondary my-2 my-sm-0"
-              type="submit"
-            >
+            <button className="btn btn-secondary my-2 my-sm-0" type="submit">
               Search
             </button>
           </form>
@@ -118,7 +115,12 @@ class App extends Component {
           onRequestClose={this.closeModal}
           style={customStyles}
         >
-          {this.state.modalIsOpen && <Detail details={this.state.details} closeModal={this.closeModal.bind(this)}/>}
+          {this.state.modalIsOpen && (
+            <Detail
+              details={this.state.details}
+              closeModal={this.closeModal.bind(this)}
+            />
+          )}
         </Modal>
       </div>
     );
